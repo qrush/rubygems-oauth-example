@@ -25,7 +25,7 @@ get "/callback" do
   @access_token = session[:access_token]
 
   # intelligently try and parse the response.body
-  #@email = access_token.get('https://www.googleapis.com/userinfo/email?alt=json').parsed
+  @gems = access_token.get('http://rubygems.dev/api/v1/gems.json').parsed
   erb :success
 end
 
